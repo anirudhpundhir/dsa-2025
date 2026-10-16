@@ -2,6 +2,11 @@ import java.util.Arrays;
 
 public class AnagramChecker {
 
+    /*
+        Time complexity: O(n log n)
+        Space complexity: O(n) for the char arrays
+        Works for any characters, not just lowercase a-z.
+    */
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) return false;
 
@@ -18,6 +23,7 @@ public class AnagramChecker {
         Time complexity: O(n)
         Space complexity: O(1)
         Explanation: n = length of s (and t); freq is a constant-size array (26).
+        Assumes lowercase a-z input.
     */
     public boolean isAnagramOptimised(String s, String t) {
         if (s.length() != t.length()) return false;
@@ -56,7 +62,7 @@ public class AnagramChecker {
         System.out.println(checker.isAnagramOptimised("hello", "world"));   // false
 
         System.out.println(checker.isAnagramCountingSortStyle("listen", "silent")); // true
-        System.out.println(checker.isAnagramCountingSortStyle("hello", "world"));   // false 
+        System.out.println(checker.isAnagramCountingSortStyle("hello", "world"));   // false
     }
-    
 }
+
