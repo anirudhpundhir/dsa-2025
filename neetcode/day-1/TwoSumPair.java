@@ -49,8 +49,8 @@ public class TwoSumPair {
 
 
     /*
-        Time complexity: O(n log N)
-        Space complexity: O(1)
+        Time complexity: O(n log n)
+        Space complexity: O(n) for the index array (the input is not modified)
 
         n is the number of elements in the input
     */
@@ -61,7 +61,7 @@ public class TwoSumPair {
         Integer[] idx = new Integer[n];
         for (int i = 0; i < n; i++) idx[i] = i;
 
-        // Stable sort indices by value at nums[i]
+        // Sort indices by value at nums[i]
         Arrays.sort(idx, Comparator.comparingInt(i -> nums[i]));
 
         int l = 0, r = n - 1;
@@ -103,5 +103,5 @@ public class TwoSumPair {
             System.out.println("No pair found");
         }
     }
-    
+
 }
